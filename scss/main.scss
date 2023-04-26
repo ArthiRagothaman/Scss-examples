@@ -1,0 +1,26 @@
+@import "./resets";
+@import "./variables";
+
+@function weight($weight-name) {
+  @return map-get($fontweights, $weight-name);
+}
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+body {
+  background-color: $primarycolor;
+  color: $textcolor;
+  font-weight: weight(bold);
+}
+
+.main {
+  @include flexCenter(row);
+  width: 80%;
+  margin: 0 auto;
+  &:hover {
+    color: rgb(44, 103, 109);
+  }
+}
